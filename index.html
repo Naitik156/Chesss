@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Obsidian Chess Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- LEFT PANEL : COURSE TREE -->
+  <aside class="panel">
+    <h2>📚 Courses</h2>
+
+    <input id="courseName" placeholder="New course name">
+    <button onclick="createCourse()">Create Course</button>
+
+    <input id="chapterName" placeholder="New chapter name">
+    <button onclick="addChapter()">Add Chapter</button>
+
+    <button onclick="savePosition()">➕ Add Position</button>
+
+    <hr>
+    <div id="courseTree"></div>
+  </aside>
+
+  <!-- CENTER : BOARD -->
+  <main class="board-area">
+    <div id="board"></div>
+    <canvas id="drawLayer"></canvas>
+
+    <textarea id="explanation"
+      placeholder="Explain this position..."
+    ></textarea>
+  </main>
+
+  <!-- RIGHT PANEL : TOOLS -->
+  <aside class="panel">
+    <h2>🛠 Tools</h2>
+    <button onclick="toggleSetup()">Setup Mode</button>
+    <button onclick="clearBoard()">Clear Board</button>
+    <button onclick="resetBoard()">Start Position</button>
+    <p class="hint">
+      • Right click drag = Arrow<br>
+      • Shift + click = Highlight
+    </p>
+  </aside>
+
+</div>
+
+<script src="chess.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
